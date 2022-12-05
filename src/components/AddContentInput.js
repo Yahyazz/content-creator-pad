@@ -3,27 +3,32 @@ import { GoPlus } from 'react-icons/go';
 
 export default function AddContentInput({ addContent }) {
   const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [description, setDescription] = useState('');
+  const [duration, setDuration] = useState('');
 
   function titleChangeHandler(e) {
     setTitle(e.target.value);
   }
 
-  function bodyChangeHandler(e) {
-    setBody(e.target.value);
+  function descriptionChangeHandler(e) {
+    setDescription(e.target.value);
+  }
+
+  function durationChangeHandler(e) {
+    setDuration(e.target.value);
   }
 
   function submitHandler(e) {
     e.preventDefault();
-    // addContent({ title, body });
+    addContent({ title, description, duration });
     setTitle('');
-    setBody('');
+    setDescription('');
   }
 
   return (
     <form
       onSubmit={submitHandler}
-      className="mx-auto flex justify-center flex-col bg-primary_background-darkgray02 px-4 sm:px-16 py-8 shadow-md w-full h-auto lg:h-fit rounded-xl"
+      className="mx-auto flex justify-center flex-col bg-primary_background-darkgray02 px-4 sm:px-16 py-8 mb-8 shadow-md w-full h-auto lg:h-fit rounded-xl"
     >
       <label className="font-semibold block my-2 text-md" htmlFor="title">
         Title
@@ -47,11 +52,24 @@ export default function AddContentInput({ addContent }) {
         name="content"
         id="content"
         placeholder="Add content here"
-        onChange={bodyChangeHandler}
-        value={body}
+        onChange={descriptionChangeHandler}
+        value={description}
         spellCheck="false"
         required
       ></textarea>
+      <label className="font-semibold block my-2 text-md" htmlFor="duration">
+        Minute Read
+      </label>
+      <input
+        className="w-full md:w-1/4 bg-primary_background-darkgray01 px-4 py-2 rounded-md focus:outline-primary-blue"
+        type="number"
+        name="duration"
+        id="duration"
+        placeholder="Input read duration here"
+        onChange={durationChangeHandler}
+        value={duration}
+        required
+      />
       <button type="submit" className="btn-primary w-full sm:w-2/3 mx-auto mt-6">
         <GoPlus className="my-auto" />
         <p>

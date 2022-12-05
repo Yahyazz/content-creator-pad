@@ -29,6 +29,10 @@
   .btn-outline {
     @apply flex justify-center py-2 px-4 border-0 text-sm font-bold rounded-full transition-all bg-primary_background-darkgray01 text-primary-blue ring-2 ring-primary-blue hover:text-primary_background-darkgray01 hover:bg-primary-blue;
   }
+
+  .btn-warning {
+    @apply flex justify-center py-2 px-4 border-0 text-sm font-bold rounded-full transition-all text-primary_background-darkgray01 bg-primary-warning hover:bg-primary_background-darkgray01 hover:text-primary-warning hover:ring-2 hover:ring-primary-warning;
+  }
 }
 
 .container-big {
@@ -139,7 +143,12 @@
 }
 
 .content-list__item-overview {
-  font-size: 20px;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 /* Detail Content */

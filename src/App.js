@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import AddPage from './pages/AddPage';
+import AdminPage from './pages/AdminPage';
 import ContentList from './pages/ContentList';
 import DetailPageWrapper from './pages/DetailPage';
 import EditPage from './pages/EditPage';
@@ -21,6 +22,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/learn" element={<ContentList />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="/articles/:id" element={<DetailPageWrapper />} />
           <Route path="/content/add" element={<AddPage />} />
           <Route path="/content/edit" element={<EditPage />} />

@@ -17,6 +17,7 @@ module.exports = {
         primary: {
           blue: '#00ADB5',
           white: '#EEEEEE',
+          warning: '#eb5757',
         },
       },
       spacing: {
