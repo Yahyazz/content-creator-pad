@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color-primary: #222831;
+  --bg-color-secondary: #393e46;
+  --bg-color-warning: #eb5757;
+  --color-main: #00adb5;
+  --text-white: #eeeeee;
+}
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--bg-color-primary);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply flex justify-center py-2 px-4 border-0 text-sm font-bold rounded-full transition-all text-primary_background-darkgray01 bg-primary-blue hover:bg-primary_background-darkgray01 hover:text-primary-blue hover:ring-2 hover:ring-primary-blue;
+  }
+  .btn-outline {
+    @apply flex justify-center py-2 px-4 border-0 text-sm font-bold rounded-full transition-all bg-primary_background-darkgray01 text-primary-blue ring-2 ring-primary-blue hover:text-primary_background-darkgray01 hover:bg-primary-blue;
+  }
+}
+
+.container-big {
+  max-width: 73rem; /* 1168px */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container-medium {
+  max-width: 60.5rem; /* 968px */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container-small {
+  max-width: 35.5rem; /* 568px */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
