@@ -2,10 +2,12 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import AddPage from './pages/AddPage';
+import AdminPage from './pages/AdminPage';
 import ContentList from './pages/ContentList';
 import DetailPageWrapper from './pages/DetailPage';
 import EditPage from './pages/EditPage';
 import LandingPage from './pages/LandingPage';
+import PageNotFound from './pages/PageNotFound';
 
 export default function App() {
   return (
@@ -18,11 +20,13 @@ export default function App() {
       </header>
       <main className="mt-32 md:mt-20 h-auto min-h-[calc(100vh-5rem)]">
         <Routes>
-          <Route path="*" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/learn" element={<ContentList />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="/articles/:id" element={<DetailPageWrapper />} />
           <Route path="/content/add" element={<AddPage />} />
           <Route path="/content/edit" element={<EditPage />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>
       <footer className="absolute left-0 w-full h-auto py-4 transition-all bg-primary_background-darkgray02">

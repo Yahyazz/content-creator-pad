@@ -1,78 +1,72 @@
-const articles = [
+let articles = [
   {
     id: 1,
     title: 'Belajar Menjadi Konten Kreator',
-    overview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum?',
     duration: 15,
-    imageUrl: '/images/item-list-content-img.jpg',
+    createdAt: '2022-04-14T04:27:34.572Z',
   },
   {
     id: 2,
     title: 'Jenis-jenis Konten dan Platform-nya',
-    overview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae?Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum?',
     duration: 15,
-    imageUrl: '/images/item-list-content-img.jpg',
+    createdAt: '2022-04-14T04:27:34.572Z',
   },
   {
     id: 3,
     title: 'Cara Agar Dapat Menarik Viewer',
-    overview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae?Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum?',
     duration: 15,
-    imageUrl: '/images/item-list-content-img.jpg',
+    createdAt: '2022-04-14T04:27:34.572Z',
   },
   {
     id: 4,
     title: 'Macam-macam Cara Mengahasilkan Income',
-    overview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae?Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum?',
     duration: 15,
-    imageUrl: '/images/item-list-content-img.jpg',
+    createdAt: '2022-04-14T04:27:34.572Z',
   },
   {
     id: 5,
     title: 'Tricks and Tips Agar Trending',
-    overview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae?Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum?',
     duration: 15,
-    imageUrl: '/images/item-list-content-img.jpg',
+    createdAt: '2022-04-14T04:27:34.572Z',
   },
   {
     id: 6,
     title: 'Tutorial Videografi',
-    overview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae?Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum?',
     duration: 15,
-    imageUrl: '/images/item-list-content-img.jpg',
+    createdAt: '2022-04-14T04:27:34.572Z',
   },
   {
     id: 7,
     title: 'Tarik Viewer mu Dengan Thumbnail Yang Menarik',
-    overview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae?Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.  Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat similique sequi, itaque recusandae nulla quo qui eveniet reiciendis necessitatibus ipsa. Quod magni facilis quo, laborum modi iste reprehenderit numquam repudiandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eveniet dolores error, porro dolorem mollitia fuga beatae similique aliquam aut. Accusamus quas nesciunt laborum incidunt esse quidem, dolore dolores harum?',
     duration: 15,
-    imageUrl: '/images/item-list-content-img.jpg',
+    createdAt: '2022-04-14T04:27:34.572Z',
   },
 ];
 
 function getDataList() {
   return articles;
+}
+
+function addContent(article) {
+  articles = [...articles, { id: +new Date(), createdAt: new Date().toISOString(), ...article }];
+}
+
+function deleteContent(id) {
+  articles = articles.filter((article) => article.id !== id);
 }
 
 function getData(id) {
@@ -89,4 +83,14 @@ function getData(id) {
   return filteredArticles[0];
 }
 
-export { getDataList, getData };
+const showFormattedDate = (date) => {
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  return new Date(date).toLocaleDateString('id-ID', options);
+};
+
+export { getDataList, addContent, deleteContent, getData, showFormattedDate };

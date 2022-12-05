@@ -42,14 +42,31 @@ class ContentList extends React.Component {
     });
 
     return (
-      <div className="content-list">
-        <ContentListHead />
-        <ContentListSearchBar
-          keyword={this.state.keyword}
-          keywordChange={this.onKeywordChangeHandler}
-        />
-        <ContentListWrap contents={contents} />
-      </div>
+      <>
+        <section className="container-big w-full h-auto min-h-[calc(100vh-5rem)] pt-16 flex justify-between items-center flex-col gap-y-8 md:gap-0">
+          <div className="w-full md:w-1/2 flex flex-col justify-center gap-y-4 px-8 text-center">
+            <h2 className="font-extrabold text-4xl">Start Learn for Free.</h2>
+            <p className="text-xl">
+              One-Stop-Learn you need to start your carrerr to become a Content Creator.
+            </p>
+          </div>
+          <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden">
+            <img
+              className="w-full md:w-full lg:w-3/4 h-fit overflow-hidden rounded-t-full object-cover"
+              src="/images/hero1.jpg"
+              alt="A person working on laptop"
+            />
+          </div>
+        </section>
+        <div className="content-list">
+          <ContentListHead />
+          <ContentListSearchBar
+            keyword={this.state.keyword}
+            keywordChange={this.onKeywordChangeHandler}
+          />
+          <ContentListWrap contents={contents} />
+        </div>
+      </>
     );
   }
 }
