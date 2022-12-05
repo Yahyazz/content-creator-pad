@@ -1,32 +1,31 @@
 /** @type {import('tailwindcss').Config}**/
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      poppins: ['Poppins', 'sans-serif'],
+      poppins: ["Poppins", "sans-serif"],
     },
     extend: {
       screens: {
-        xsm: '360px',
+        xsm: "360px",
       },
       colors: {
         primary_background: {
-          darkgray01: '#222831',
-          darkgray02: '#393E46',
+          darkgray01: "#222831",
+          darkgray02: "#393E46",
         },
         primary: {
-          blue: '#00ADB5',
-          white: '#EEEEEE',
+          blue: "#00ADB5",
         },
       },
       spacing: {
-        '76px': '76px',
-        '30px': '30px',
-        '116px': '116px',
-        '118px': '118px',
-        '300px': '300px',
+        "76px": "76px",
+        "30px": "30px",
+        "116px": "116px",
+        "118px": "118px",
+        "300px": "300px",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
