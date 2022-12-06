@@ -15,7 +15,7 @@ function AdminContentListItem({ id, title, description, duration, onDelete }) {
             {duration} min read
           </p>
         </div>
-        <p className="content-list__item-overview">{description}</p>
+        <p className="admin-content-list__item-overview">{description}</p>
         <div className="w-full md:w-1/3 md:ml-auto">
           <DeleteButton id={id} onDelete={onDelete} />
         </div>

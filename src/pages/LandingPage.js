@@ -45,7 +45,7 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row justify-between items-center w-full gap-y-8 md:gap-y-0 md:gap-x-8">
             <div className="h-48 w-full md:w-1/3 flex flex-col justify-center items-center bg-primary_background-darkgray01 rounded-xl">
               <MdPeople className="text-8xl text-primary-blue" />
-              <p className="text-lg text-center">1000+ person join us.</p>
+              <p className="text-lg text-center">1000+ people join us.</p>
             </div>
             <div className="h-48 w-full md:w-1/3 flex flex-col justify-center items-center bg-primary_background-darkgray01 rounded-xl">
               <MdPublish className="text-8xl text-primary-blue" />
@@ -64,7 +64,9 @@ export default function LandingPage() {
             JOIN MORE THAN ONE THOUSAND PEOPLE WHO ALREADY CONTRIBUTE TO CCPAD
           </h2>
           <h3 className="font-regular text-xl text-center">Want to contribute with us?</h3>
-          <button className="btn-primary w-full md:w-2/3">Start Contribute</button>
+          <Link to="/register" className="w-full md:w-2/3">
+            <button className="btn-primary w-full">Start Contribute</button>
+          </Link>
         </div>
       </section>
     </div>
