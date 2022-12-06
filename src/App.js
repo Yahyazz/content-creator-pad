@@ -7,7 +7,9 @@ import ContentList from './pages/ContentList';
 import DetailPageWrapper from './pages/DetailPage';
 import EditPage from './pages/EditPage';
 import LandingPage from './pages/LandingPage';
+import LoginPage from './pages/LoginPage';
 import PageNotFound from './pages/PageNotFound';
+import RegisterPage from './pages/RegisterPage';
 
 export default function App() {
   return (
@@ -26,6 +28,8 @@ export default function App() {
           <Route path="/articles/:id" element={<DetailPageWrapper />} />
           <Route path="/content/add" element={<AddPage />} />
           <Route path="/content/edit" element={<EditPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>
