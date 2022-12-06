@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import ContentArticleDetail from '../components/ContentArticleDetail';
 import { getData } from '../utils/data';
+import PageNotFound from './PageNotFound';
 
 function DetailPageWrapper() {
   const { id } = useParams();
@@ -19,11 +20,11 @@ class DetailPage extends React.Component {
 
   render() {
     if (this.state.content === null) {
-      return <p>Article is not found!</p>;
+      return <PageNotFound />;
     }
 
     return (
-      <div>
+      <div className="container-big w-full h-auto py-8">
         <ContentArticleDetail {...this.state.content} />
       </div>
     );

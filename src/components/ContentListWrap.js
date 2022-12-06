@@ -3,7 +3,7 @@ import ContentListItem from './ContentListItem';
 
 function ContentListWrap({ contents }) {
   return (
-    <div className="content-list__warp">
+    <div className="w-full h-auto flex flex-col items-center gap-y-8">
       {contents.map((content) => (
         <ContentListItem key={content.id} {...content} />
       ))}

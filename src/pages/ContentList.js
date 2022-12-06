@@ -1,6 +1,5 @@
 import React from 'react';
 import ContentListWrap from '../components/ContentListWrap';
-import ContentListHead from '../components/ContentListHead';
 import ContentListSearchBar from '../components/ContentListSearchBar';
 import { getDataList } from '../utils/data';
 
@@ -43,7 +42,7 @@ class ContentList extends React.Component {
 
     return (
       <>
-        <section className="container-big w-full h-auto min-h-[calc(100vh-5rem)] pt-16 flex justify-between items-center flex-col gap-y-8 md:gap-0">
+        <section className="container-big w-full h-auto min-h-[calc(100vh-5rem)] pt-32 sm:pt-16 flex justify-between items-center flex-col">
           <div className="w-full md:w-1/2 flex flex-col justify-center gap-y-4 px-8 text-center">
             <h2 className="font-extrabold text-4xl">Start Learn for Free.</h2>
             <p className="text-xl">
@@ -58,13 +57,16 @@ class ContentList extends React.Component {
             />
           </div>
         </section>
-        <div className="content-list">
-          <ContentListHead />
-          <ContentListSearchBar
-            keyword={this.state.keyword}
-            keywordChange={this.onKeywordChangeHandler}
-          />
-          <ContentListWrap contents={contents} />
+        <div className="w-full h-auto bg-primary_background-darkgray02">
+          <div className="container-big w-full h-auto flex py-8 items-center flex-col gap-y-4">
+            <h2 className="text-2xl font-bold text-center">Lorem ipsum</h2>
+            <p className="text-xl text-center">Lorem ipsum dolor sit amet</p>
+            <ContentListSearchBar
+              keyword={this.state.keyword}
+              keywordChange={this.onKeywordChangeHandler}
+            />
+            <ContentListWrap contents={contents} />
+          </div>
         </div>
       </>
     );

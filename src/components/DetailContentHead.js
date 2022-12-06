@@ -1,12 +1,13 @@
 import React from 'react';
+import { showFormattedDate } from '../utils/data';
 
-function DetailContentHead({ duration }) {
+function DetailContentHead({ duration, createdAt }) {
   return (
-    <div className="detail-content__head">
-      <p className="detail-content__head-author">Author</p>
-      <div className="detail-content__head-wrap">
-        <p className="detail-content__head-release-date">Sep 22, 2022</p>
-        <p className="detail-content__head-duration">{duration} min to read</p>
+    <div className="w-full">
+      <p className="font-bold text-base mb-4">Author</p>
+      <div className="flex justify-between sm:justify-start gap-x-4">
+        <p className="w-fit text-sm font-light">{showFormattedDate(createdAt)}</p>
+        <p className="w-fit text-sm font-light">{duration} min to read</p>
       </div>
     </div>
   );
