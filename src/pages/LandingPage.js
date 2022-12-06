@@ -59,12 +59,12 @@ export default function LandingPage() {
         </div>
       </section>
       <section className="container-big w-full h-auto min-h-[calc(100vh-5rem)] flex justify-center items-center">
-        <div className="w-full md:w-3/4 px-16 py-16 flex justify-center items-center flex-col gap-y-8 bg-primary_background-darkgray02 rounded-3xl">
+        <div className="w-full md:w-3/4 px-4 sm:px-16 py-16 flex justify-center items-center flex-col gap-y-8 bg-primary_background-darkgray02 rounded-3xl">
           <h2 className="font-extrabold text-4xl text-center">
             JOIN MORE THAN ONE THOUSAND PEOPLE WHO ALREADY CONTRIBUTE TO CCPAD
           </h2>
           <h3 className="font-regular text-xl text-center">Want to contribute with us?</h3>
-          <Link to="/register" className="w-full md:w-2/3">
+          <Link to="/register" className="w-4/5 md:w-2/3">
             <button className="btn-primary w-full">Start Contribute</button>
           </Link>
         </div>

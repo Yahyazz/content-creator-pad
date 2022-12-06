@@ -2,27 +2,13 @@ import React, { useState } from 'react';
 import { GoPlus } from 'react-icons/go';
 
 export default function AddContentInput({ addContent }) {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [duration, setDuration] = useState('');
-
-  function titleChangeHandler(e) {
-    setTitle(e.target.value);
-  }
-
-  function descriptionChangeHandler(e) {
-    setDescription(e.target.value);
-  }
-
-  function durationChangeHandler(e) {
-    setDuration(e.target.value);
-  }
+  const [title, titleChangeHandler] = useState('');
+  const [description, descriptionChangeHandler] = useState('');
+  const [duration, durationChangeHandler] = useState('');
 
   function submitHandler(e) {
     e.preventDefault();
     addContent({ title, description, duration });
-    setTitle('');
-    setDescription('');
   }
 
   return (
