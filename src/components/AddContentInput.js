@@ -1,19 +1,43 @@
 import React, { useState } from 'react';
 import { GoPlus } from 'react-icons/go';
+import { db } from '../utils/firebase-config';
+import { collection, addDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
-export default function AddContentInput({ addContent }) {
-  const [title, titleChangeHandler] = useState('');
-  const [description, descriptionChangeHandler] = useState('');
-  const [duration, durationChangeHandler] = useState('');
+export default function AddContentInput() {
+  const [newTitle, setNewTitle] = useState("")
+  const [newAuthor, setNewAuthor] = useState("")
+  const [newDescription, setNewDescription] = useState("")
+  const [newDuration, setNewDuration] = useState(0)
 
-  function submitHandler(e) {
+  const articlesCollectionRef = collection(db, "articles")
+  const navigate = useNavigate();
+
+  const addArticle = async (e) => {
     e.preventDefault();
-    addContent({ title, description, duration });
+    await addDoc(articlesCollectionRef, { title: newTitle, author: newAuthor, createdAt: new Date().toDateString() , description: newDescription, duration: newDuration });
+    navigate('/admin');
+  }
+
+  function titleChangeHandler(e) {
+    setNewTitle(e.target.value);
+  }
+  
+  function authorChangeHandler(e) {
+    setNewAuthor(e.target.value);
+  }
+
+  function descriptionChangeHandler(e) {
+    setNewDescription(e.target.value);
+  }
+
+  function durationChangeHandler(e) {
+    setNewDuration(e.target.value);
   }
 
   return (
     <form
-      onSubmit={submitHandler}
+      onSubmit={addArticle}
       className="mx-auto flex justify-center flex-col bg-primary_background-darkgray02 px-4 sm:px-16 py-8 mb-8 shadow-md w-full h-auto lg:h-fit rounded-xl"
     >
       <label className="font-semibold block my-2 text-md" htmlFor="title">
@@ -26,7 +50,20 @@ export default function AddContentInput({ addContent }) {
         id="title"
         placeholder="Input title here"
         onChange={titleChangeHandler}
-        value={title}
+        value={newTitle}
+        required
+      />
+      <label className="font-semibold block my-2 text-md" htmlFor="title">
+        Author
+      </label>
+      <input
+        className="w-full bg-primary_background-darkgray01 px-4 py-2 rounded-md focus:outline-primary-blue"
+        type="text"
+        name="author"
+        id="author"
+        placeholder="Input author here"
+        onChange={authorChangeHandler}
+        value={newAuthor}
         required
       />
       <label className="font-semibold block my-2 text-md" htmlFor="content">
@@ -39,7 +76,7 @@ export default function AddContentInput({ addContent }) {
         id="content"
         placeholder="Add content here"
         onChange={descriptionChangeHandler}
-        value={description}
+        value={newDescription}
         spellCheck="false"
         required
       ></textarea>
@@ -53,7 +90,7 @@ export default function AddContentInput({ addContent }) {
         id="duration"
         placeholder="Input read duration here"
         onChange={durationChangeHandler}
-        value={duration}
+        value={newDuration}
         required
       />
       <button type="submit" className="btn-primary w-full sm:w-2/3 mx-auto mt-6">

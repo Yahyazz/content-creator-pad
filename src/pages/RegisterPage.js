@@ -1,13 +1,8 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import RegisterInput from '../components/RegisterInput';
 
 export default function RegisterPage() {
-  const navigate = useNavigate();
-
-  async function onRegisterHandler() {
-    navigate('/login');
-  }
 
   return (
     <section className="container-big h-full min-h-[calc(90vh-5rem)] flex flex-col justify-center items-center pt-4">
@@ -16,7 +11,7 @@ export default function RegisterPage() {
           Sign up to
           <span className="text-primary-blue"> CCPAD</span>
         </h2>
-        <RegisterInput register={onRegisterHandler} />
+        <RegisterInput />
         <p className="text-base font-light ">
           Already have an account?
           <Link to="/login">

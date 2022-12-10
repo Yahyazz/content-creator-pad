@@ -21,3 +21,4 @@ function ContentListItem({ id, title, description, duration }) {
 }
 
 export default ContentListItem;
+

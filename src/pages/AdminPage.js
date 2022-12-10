@@ -1,50 +1,67 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import ContentListSearchBar from '../components/ContentListSearchBar';
-import { deleteContent, getDataList } from '../utils/data';
 import AdminContentListWrap from '../components/AdminContentListWrap';
 import { GoPlus } from 'react-icons/go';
 import { Link } from 'react-router-dom';
+import { auth, db } from '../utils/firebase-config';
+import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
+import { onAuthStateChanged } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 
-class AdminPage extends React.Component {
-  constructor(props) {
-    super(props);
+function AdminPage() {
+  const [contents, setContents] = useState([])
+  const [ searchParams, setSearchParams ] = useSearchParams();
+  const [ keyword, setKeyword ] = React.useState(() => {
+    return searchParams.get('keyword') || ''
+  });
 
-    this.state = {
-      contents: getDataList(),
-      keyword: '',
-    };
+  const articlesCollectionRef = collection(db, "articles")
 
-    this.onKeywordChangeHandler = this.onKeywordChangeHandler.bind(this);
-    this.onDeleteHandler = this.onDeleteHandler.bind(this);
+  useEffect(() => {
+    const getContents = async () => {
+      const data = await getDocs(articlesCollectionRef)
+      setContents(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+    }
+
+    getContents()
+  }, [])
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if(!user) {
+        navigate('/login')
+      }
+    })
+  })
+
+  const deleteArticle = async (id) => {
+    const articleDoc = doc(db, "articles", id)
+    await deleteDoc(articleDoc)
+    window.location.reload()
   }
 
-  onKeywordChangeHandler(keyword) {
-    this.setState(() => {
-      return {
-        keyword,
-      };
-    });
+  async function onKeywordChangeHandler(keyword) {
+    setKeyword(keyword);
+    setSearchParams({ keyword });
   }
 
-  onDeleteHandler(id) {
-    deleteContent(id);
-    this.setState(() => {
-      return {
-        contents: getDataList(),
-      };
-    });
-  }
+  const filteredContents = contents.filter((content) => {
+    return content.title.toLowerCase().includes(
+      keyword.toLowerCase()
+    );
+  });
 
-  render() {
-    const contents = this.state.contents.filter((content) => {
-      return content.title.toLowerCase().includes(this.state.keyword.toLowerCase());
-    });
+  const [user, loading, error] = useAuthState(auth)
 
-    return (
-      <>
-        <section className="container-big w-full h-auto min-h-[calc(100vh-5rem)] flex items-center gap-y-8 md:gap-0">
+  return (
+    <>
+      <section className="container-big w-full h-auto min-h-[calc(100vh-5rem)] flex items-center gap-y-8 md:gap-0">
           <div className="w-full md:w-1/2 flex flex-col gap-y-4 px-8 text-center sm:text-left">
-            <h2 className="font-extrabold text-4xl">Welcome, Username.</h2>
+            <h2 className="font-extrabold text-4xl">Welcome, {user?.email}</h2>
             <p className="text-xl">
               Start creating content to share your knowledge on how to become a Content Creator.
             </p>
@@ -57,21 +74,18 @@ class AdminPage extends React.Component {
               </button>
             </Link>
           </div>
-        </section>
-        <div className="w-full h-auto bg-primary_background-darkgray02">
+      </section>
+
+      <div className="w-full h-auto bg-primary_background-darkgray02">
           <div className="container-big w-full h-auto flex py-8 items-center flex-col gap-y-4">
-            <h2 className="text-2xl font-bold text-center">Lorem ipsum</h2>
-            <p className="text-xl text-center">Lorem ipsum dolor sit amet</p>
-            <ContentListSearchBar
-              keyword={this.state.keyword}
-              keywordChange={this.onKeywordChangeHandler}
-            />
-            <AdminContentListWrap contents={contents} onDelete={this.onDeleteHandler} />
+            <h2 className="text-2xl font-bold text-center">Improve your skills</h2>
+            <p className="text-xl text-center">by reading the articles we provide below</p>
+            <ContentListSearchBar keyword={keyword} keywordChange={onKeywordChangeHandler} />
+            <AdminContentListWrap contents={filteredContents} deleteArticle={deleteArticle} />
           </div>
-        </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
 }
 
 export default AdminPage;
