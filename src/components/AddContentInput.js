@@ -1,43 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GoPlus } from 'react-icons/go';
-import { db } from '../utils/firebase-config';
-import { collection, addDoc } from 'firebase/firestore';
-import { useNavigate } from 'react-router-dom';
+import useInput from '../hooks/useInput';
 
-export default function AddContentInput() {
-  const [newTitle, setNewTitle] = useState("")
-  const [newAuthor, setNewAuthor] = useState("")
-  const [newDescription, setNewDescription] = useState("")
-  const [newDuration, setNewDuration] = useState(0)
+export default function AddContentInput({ addArticle }) {
+  const [newTitle, titleChangeHandler] = useInput('');
+  const [newAuthor, authorChangeHandler] = useInput('');
+  const [newDescription, descriptionChangeHandler] = useInput('');
+  const [newDuration, durationChangeHandler] = useInput(0);
 
-  const articlesCollectionRef = collection(db, "articles")
-  const navigate = useNavigate();
-
-  const addArticle = async (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
-    await addDoc(articlesCollectionRef, { title: newTitle, author: newAuthor, createdAt: new Date().toDateString() , description: newDescription, duration: newDuration });
-    navigate('/admin');
-  }
-
-  function titleChangeHandler(e) {
-    setNewTitle(e.target.value);
-  }
-  
-  function authorChangeHandler(e) {
-    setNewAuthor(e.target.value);
-  }
-
-  function descriptionChangeHandler(e) {
-    setNewDescription(e.target.value);
-  }
-
-  function durationChangeHandler(e) {
-    setNewDuration(e.target.value);
-  }
+    addArticle({ newTitle, newAuthor, newDescription, newDuration });
+  };
 
   return (
     <form
-      onSubmit={addArticle}
+      onSubmit={submitHandler}
       className="mx-auto flex justify-center flex-col bg-primary_background-darkgray02 px-4 sm:px-16 py-8 mb-8 shadow-md w-full h-auto lg:h-fit rounded-xl"
     >
       <label className="font-semibold block my-2 text-md" htmlFor="title">

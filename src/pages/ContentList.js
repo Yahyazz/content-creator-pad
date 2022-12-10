@@ -40,7 +40,7 @@ function ContentList() {
           <div className="w-full md:w-1/2 flex flex-col justify-center gap-y-4 px-8 text-center">
             <h2 className="font-extrabold text-4xl">Start Learn for Free.</h2>
             <p className="text-xl">
-              One-Stop-Learn you need to start your carrerr to become a Content Creator.
+              Explore our website today and start mastering the art of creating compelling content.
             </p>
           </div>
           <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden">

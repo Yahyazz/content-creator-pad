@@ -5,7 +5,6 @@ import AddPage from './pages/AddPage';
 import AdminPage from './pages/AdminPage';
 import ContentList from './pages/ContentList';
 import DetailPage from './pages/DetailPage';
-import EditPage from './pages/EditPage';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import PageNotFound from './pages/PageNotFound';
@@ -27,7 +26,6 @@ export default function App() {
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/articles/:id" element={<DetailPage />} />
           <Route path="/content/add" element={<AddPage />} />
-          <Route path="/content/edit" element={<EditPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="*" element={<PageNotFound />} />

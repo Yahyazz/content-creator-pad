@@ -14,11 +14,10 @@ function ContentListItem({ id, title, description, duration }) {
             {duration} min read
           </p>
         </div>
-        <p className="content-list__item-overview">{description}</p>
+        <p className="content-list__item-overview font-montserrat">{description}</p>
       </div>
     </div>
   );
 }
 
 export default ContentListItem;
-

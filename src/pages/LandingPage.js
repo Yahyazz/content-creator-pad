@@ -6,9 +6,10 @@ export default function LandingPage() {
     <div>
       <section className="container-big w-full h-auto min-h-[calc(100vh-5rem)] pb-16 flex justify-center items-center flex-col-reverse gap-y-8 md:gap-0 md:flex-row md:justify-between">
         <div className="w-full md:w-1/2 flex flex-col justify-center gap-y-4 px-8 text-center md:text-left">
-          <h2 className="font-extrabold text-4xl">Start Your Way to be Content Creator.</h2>
+          <h2 className="font-extrabold text-4xl">Start Your Way to be Content Creator!</h2>
           <p className="text-xl">
-            One-Stop-Learn you need to start your carrerr to become a Content Creator.
+            We're here to help you develop the skills and knowledge you need to succeed as a content
+            creator.
           </p>
           <Link to="/learn" className="w-full lg:w-1/2">
             <button className="w-full btn-primary">Start Learn for Free</button>
@@ -25,9 +26,10 @@ export default function LandingPage() {
       <section className="w-full h-auto min-h-[calc(100vh-5rem)] pb-16 bg-primary_background-darkgray02">
         <div className="container-big w-full h-auto min-h-[calc(100vh-5rem)] flex justify-center items-center flex-col-reverse gap-y-8 md:gap-0 md:flex-row-reverse md:justify-between">
           <div className="w-full md:w-1/2 flex flex-col justify-center gap-y-4 px-8 text-center md:text-left">
-            <h2 className="font-extrabold text-4xl">Start Your Way to be Content Creator.</h2>
+            <h2 className="font-extrabold text-4xl">We can't wait to see what you create!</h2>
             <p className="text-xl">
-              One-Stop-Learn you need to start your carrerr to become a Content Creator.
+              Our website offers a wealth of resources and tutorials to help you develop your skills
+              and build a successful career as a content creator.
             </p>
           </div>
           <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden">
@@ -45,7 +47,7 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row justify-between items-center w-full gap-y-8 md:gap-y-0 md:gap-x-8">
             <div className="h-48 w-full md:w-1/3 flex flex-col justify-center items-center bg-primary_background-darkgray01 rounded-xl">
               <MdPeople className="text-8xl text-primary-blue" />
-              <p className="text-lg text-center">1000+ person join us.</p>
+              <p className="text-lg text-center">1000+ people join us.</p>
             </div>
             <div className="h-48 w-full md:w-1/3 flex flex-col justify-center items-center bg-primary_background-darkgray01 rounded-xl">
               <MdPublish className="text-8xl text-primary-blue" />
@@ -59,7 +61,7 @@ export default function LandingPage() {
         </div>
       </section>
       <section className="container-big w-full h-auto min-h-[calc(100vh-5rem)] flex justify-center items-center">
-      <div className="w-full md:w-3/4 px-4 sm:px-16 py-16 flex justify-center items-center flex-col gap-y-8 bg-primary_background-darkgray02 rounded-3xl">
+        <div className="w-full md:w-3/4 px-4 sm:px-16 py-16 flex justify-center items-center flex-col gap-y-8 bg-primary_background-darkgray02 rounded-3xl">
           <h2 className="font-extrabold text-4xl text-center">
             JOIN MORE THAN ONE THOUSAND PEOPLE WHO ALREADY CONTRIBUTE TO CCPAD
           </h2>
