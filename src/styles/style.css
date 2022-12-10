@@ -65,6 +65,7 @@
   flex-direction: column;
   align-items: center;
   background-color: #393e46;
+  margin-top: -10px;
 }
 
 .content-list__head {
@@ -107,7 +108,7 @@
 }
 
 .content-list__item-img {
-  width: 700px;
+  width: 2000px;
   background-color: #616161;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -142,21 +143,13 @@
   align-items: center;
 }
 
-.admin-content-list__item-overview {
+.content-list__item-overview {
   font-size: 16px;
+  height: 124px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2; /* number of lines to show */
-  -webkit-box-orient: vertical;
-}
-
-.content-list__item-overview {
-  font-size: 16px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 6; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
 

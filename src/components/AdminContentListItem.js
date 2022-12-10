@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import DeleteButton from './DeleteButton';
 
-function AdminContentListItem({ id, title, description, duration, onDelete }) {
+function AdminContentListItem({ id, title, description, duration, deleteArticle }) {
   return (
     <div className="flex w-full h-auto min-h-[18rem] rounded-2xl overflow-hidden bg-primary_background-darkgray01">
       <div className="hidden sm:block md:w-1/5 h-auto bg-primary-blue"></div>
@@ -15,9 +15,9 @@ function AdminContentListItem({ id, title, description, duration, onDelete }) {
             {duration} min read
           </p>
         </div>
-        <p className="admin-content-list__item-overview">{description}</p>
+        <p className="content-list__item-overview font-montserrat">{description}</p>
         <div className="w-full md:w-1/3 md:ml-auto">
-          <DeleteButton id={id} onDelete={onDelete} />
+          <DeleteButton id={id} deleteArticle={deleteArticle} />
         </div>
       </div>
     </div>

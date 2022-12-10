@@ -1,3 +1,5 @@
+import { getFirestore, doc, onSnapshot, collection } from 'firebase/firestore';
+
 let articles = [
   {
     id: 1,
@@ -69,18 +71,39 @@ function deleteContent(id) {
   articles = articles.filter((article) => article.id !== id);
 }
 
+
+
+
+const db = getFirestore()
+const colRef = collection(db, 'articles')
+
+onSnapshot(colRef, (snapshot) => {
+    let articles = []
+    snapshot.docs.forEach((doc) => {
+        articles.push({ ...doc.data(), id: doc.id })
+    })
+    console.log(articles)
+})
+
 function getData(id) {
-  if (!id) {
-    return null;
-  }
+  
+  const docRef = doc(db, 'articles', id)
+  onSnapshot(docRef, (doc) => {
+    console.log(doc.data(), doc.id)
+  })
 
-  const filteredArticles = articles.filter((article) => article.id === id);
+  // if (!id) {
+  //   return null;
+  // }
+  // console.log(articles)
+  // const filteredArticles = articles.filter((article) => article.id !== id);
+  // console.log(filteredArticles)
 
-  if (!filteredArticles.length) {
-    return null;
-  }
+  // if (!filteredArticles.length) {
+  //   return null;
+  // }
 
-  return filteredArticles[0];
+  // return filteredArticles[0];
 }
 
 const showFormattedDate = (date) => {
