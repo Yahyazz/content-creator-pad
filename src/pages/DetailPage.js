@@ -17,13 +17,12 @@ function DetailPage() {
     const blogDetail = await getDoc(docRef);
     setBlog(blogDetail.data());
   };
-
   return (
     <div className="container-big w-full h-auto py-8">
       <ContentArticleDetail
         author={blog?.author}
         title={blog?.title}
-        description={blog?.description}
+        description={blog?.description || ''}
         duration={blog?.duration}
         createdAt={blog?.createdAt}
       />
