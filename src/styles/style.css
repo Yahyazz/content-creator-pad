@@ -59,6 +59,19 @@
   margin: 0;
 }
 
+ul,
+ol {
+  padding-left: 1.15rem;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
 .content-list {
   font-family: 'Poppins', sans-serif;
   display: flex;
@@ -145,11 +158,19 @@
 
 .content-list__item-overview {
   font-size: 16px;
-  height: 124px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-line-clamp: 6; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.admin-content-list__item-overview {
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
 

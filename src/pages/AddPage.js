@@ -14,7 +14,7 @@ export default function AddPage() {
       title: article.newTitle,
       author: article.newAuthor,
       createdAt: new Date().toDateString(),
-      description: article.newDescription,
+      description: article.description,
       duration: article.newDuration,
     });
     navigate('/admin');

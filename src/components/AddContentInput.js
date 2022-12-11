@@ -1,16 +1,25 @@
-import React from 'react';
+import { Editor } from 'react-draft-wysiwyg';
+import React, { useState } from 'react';
 import { GoPlus } from 'react-icons/go';
 import useInput from '../hooks/useInput';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import draftToHtml from 'draftjs-to-html';
+import { convertToRaw } from 'draft-js';
 
 export default function AddContentInput({ addArticle }) {
   const [newTitle, titleChangeHandler] = useInput('');
   const [newAuthor, authorChangeHandler] = useInput('');
-  const [newDescription, descriptionChangeHandler] = useInput('');
+  const [newDescription, setNewDescription] = useState('');
   const [newDuration, durationChangeHandler] = useInput(0);
+
+  function descriptionChangeHandler(body) {
+    setNewDescription(body);
+  }
 
   const submitHandler = (e) => {
     e.preventDefault();
-    addArticle({ newTitle, newAuthor, newDescription, newDuration });
+    const description = draftToHtml(convertToRaw(newDescription.getCurrentContent()));
+    addArticle({ newTitle, newAuthor, description, newDuration });
   };
 
   return (
@@ -44,20 +53,14 @@ export default function AddContentInput({ addArticle }) {
         value={newAuthor}
         required
       />
-      <label className="font-semibold block my-2 text-md" htmlFor="content">
-        Content
-      </label>
-      <textarea
-        className="w-full h-48 bg-primary_background-darkgray01 px-4 py-2 rounded-md focus:outline-primary-blue"
-        type="textarea"
-        name="content"
-        id="content"
-        placeholder="Add content here"
-        onChange={descriptionChangeHandler}
-        value={newDescription}
-        spellCheck="false"
-        required
-      ></textarea>
+      <label className="font-semibold block my-2 text-md">Content</label>
+      <Editor
+        editorState={newDescription}
+        toolbarClassName="toolbarClassName text-black"
+        wrapperClassName="wrapperClassName"
+        editorClassName="editorClassName w-full min-h-[12rem] bg-primary_background-darkgray01 px-4 py-2 rounded-md"
+        onEditorStateChange={descriptionChangeHandler}
+      />
       <label className="font-semibold block my-2 text-md" htmlFor="duration">
         Minute Read
       </label>
